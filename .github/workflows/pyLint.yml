@@ -2,4 +2,8 @@ name: pyLint
 
 on:
   push:
-  workfl
+  workflow_dispatch:
+
+jobs:
+  pyLint:
+    
