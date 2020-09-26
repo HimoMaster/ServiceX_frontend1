@@ -18,4 +18,4 @@ jobs:
         run: pip install autopep8 autoflake isort black
       - name: "[autopep8] Format fixes"
         run: |
-          fin
+          find -name "*.py" -not -path "./venv
