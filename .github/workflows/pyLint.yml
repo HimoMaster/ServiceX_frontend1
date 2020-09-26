@@ -15,4 +15,5 @@ jobs:
         with:
           python-version: 3.9
       - name: Install dependencies
-        run: pip install autopep8 autoflake isort blac
+        run: pip install autopep8 autoflake isort black
+      - name: "[autopep8] F
