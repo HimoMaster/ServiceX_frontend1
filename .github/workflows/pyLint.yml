@@ -10,4 +10,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Pyth
+      - name: Setup Python
+        uses: actions/setup-python@v1
+  
