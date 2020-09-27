@@ -19,4 +19,4 @@ jobs:
       - name: "[autopep8] Format fixes"
         run: |
           find -name "*.py" -not -path "./venv/*" -exec autopep8 --verbose --in-place --recursive --aggressive --aggressive '{}' \;
-      -
+      - name: "[autoflake] Remove unused imports and
