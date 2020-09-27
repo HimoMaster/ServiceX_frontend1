@@ -18,4 +18,5 @@ jobs:
         run: pip install autopep8 autoflake isort black
       - name: "[autopep8] Format fixes"
         run: |
-          find -name "*.py" -not -path "./venv/*" -exec autopep8 --verbose --in-place --recursive -
+          find -name "*.py" -not -path "./venv/*" -exec autopep8 --verbose --in-place --recursive --aggressive --aggressive '{}' \;
+      -
