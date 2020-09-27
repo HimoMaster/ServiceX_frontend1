@@ -21,4 +21,4 @@ jobs:
           find -name "*.py" -not -path "./venv/*" -exec autopep8 --verbose --in-place --recursive --aggressive --aggressive '{}' \;
       - name: "[autoflake] Remove unused imports and variables"
         run: |
-          find . -regex "^.\/\Main\/\w+\/.+\.py$" -exec au
+          find . -regex "^.\/\Main\/\w+\/.+\.py$" -exec autoflake --in-place --recursive --rem
