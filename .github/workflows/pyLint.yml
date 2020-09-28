@@ -25,4 +25,6 @@ jobs:
       - name: "[black] lint"
         run: |
           black -v .
-      - name
+      - name: "[isort] lint"
+        run: |
+   
