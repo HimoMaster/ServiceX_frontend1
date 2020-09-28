@@ -24,3 +24,5 @@ jobs:
           find . -regex "^.\/\Main\/\w+\/.+\.py$" -exec autoflake --in-place --recursive --remove-all-unused-imports --remove-unused-variables --ignore-init-module-imports -v -v '{}' \;
       - name: "[black] lint"
         run: |
+          black -v .
+      - name
