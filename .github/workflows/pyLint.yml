@@ -28,4 +28,5 @@ jobs:
       - name: "[isort] lint"
         run: |
           isort -v --cs --ca --ls --lss --ds --fss --lai 2 -m 4 .
-    
+      - name: Commit Checkout
+        u
