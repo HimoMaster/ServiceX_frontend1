@@ -27,4 +27,4 @@ jobs:
           black -v .
       - name: "[isort] lint"
         run: |
-   
+          isort -v --cs --ca --ls --lss
