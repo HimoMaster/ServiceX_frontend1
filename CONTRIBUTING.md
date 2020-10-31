@@ -6,4 +6,4 @@
 ## Adding a new language
 
 - Google your language code and create `your_iso_language_code.json`.
-- Cop
+- Copy translations of another language (one 
