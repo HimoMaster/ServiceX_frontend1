@@ -3,4 +3,6 @@
 - Fork the repository.
 - Open the `lang` directory.
 
-## Adding a new langua
+## Adding a new language
+
+- Google your language code and crea
