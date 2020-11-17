@@ -10,4 +10,6 @@
 - Translate all of the strings to that language.
 - Commit with a message like "Add [language name] translations".
 
-## Modifying
+## Modifying an existing language
+
+- Open the translation
