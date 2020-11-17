@@ -12,4 +12,5 @@
 
 ## Modifying an existing language
 
-- Open the translation
+- Open the translation file you want to modify.
+- Ma
