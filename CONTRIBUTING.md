@@ -13,4 +13,5 @@
 ## Modifying an existing language
 
 - Open the translation file you want to modify.
-- Make your changes and add your n
+- Make your changes and add your name to "authors".
+- Commit with a message 
