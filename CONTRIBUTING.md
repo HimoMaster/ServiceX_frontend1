@@ -13,4 +13,4 @@
 ## Modifying an existing language
 
 - Open the translation file you want to modify.
-- Ma
+- Make your changes and add your n
