@@ -19,4 +19,5 @@
 # Other contributions
 
 If you're fixing a bug or adding a new feature, please:
-- Use verbs in their present forms in your commit 
+- Use verbs in their present forms in your commit messages.
+- Avoid using emojis and ot
