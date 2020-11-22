@@ -20,4 +20,4 @@
 
 If you're fixing a bug or adding a new feature, please:
 - Use verbs in their present forms in your commit messages.
-- Avoid using emojis and ot
+- Avoid using emojis and other non-usual characters in your commit me
