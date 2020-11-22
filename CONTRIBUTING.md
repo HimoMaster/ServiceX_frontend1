@@ -14,4 +14,6 @@
 
 - Open the translation file you want to modify.
 - Make your changes and add your name to "authors".
-- Commit with a message 
+- Commit with a message like "Modify [language name] translations".
+
+# Othe
