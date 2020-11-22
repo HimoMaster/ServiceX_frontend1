@@ -18,4 +18,5 @@
 
 # Other contributions
 
-If you're fixing a bug or adding
+If you're fixing a bug or adding a new feature, please:
+- Use verbs i
