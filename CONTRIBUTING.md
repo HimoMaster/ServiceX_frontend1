@@ -19,4 +19,4 @@
 # Other contributions
 
 If you're fixing a bug or adding a new feature, please:
-- Use verbs i
+- Use verbs in their present forms in your commit 
