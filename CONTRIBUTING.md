@@ -16,4 +16,6 @@
 - Make your changes and add your name to "authors".
 - Commit with a message like "Modify [language name] translations".
 
-# Othe
+# Other contributions
+
+If you're fixing a bug or adding
