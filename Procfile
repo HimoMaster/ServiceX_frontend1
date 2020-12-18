@@ -1,1 +1,1 @@
-worker: 
+worker: bash startup.sh
