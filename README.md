@@ -92,3 +92,28 @@ Command | Description
 • !lang / language [language code] | Set the bot language in group
 • !ip / !import | Import queue from exported file
 • !ep / !export | Export the queue for import in future
+• !stop / !leave | Leave from vc and clear the queue
+
+## ■ <a name="languages"></a>Languages
+
+```text
+en    English
+```
+
+## ■ <a name="contribute"></a>Contribute
+
+New languages, bug fixes and improvements following
+[our contribution guidelines](./CONTRIBUTING.md) are warmly welcomed!
+
+## ■ <a name="supports"></a>Supports
+
+For any kind of help join [Group](https://t.me/SecretGroupC).
+
+## ■ <a name="credits"></a>Credits
+
+- [Me](https://github.com/TwistBots) for [Noting](https://github.com/TwistBots/MusicPlayer)
+
+## ■ <a name="license"></a>License
+
+Music Player is licenced under the GNU Affero General Public License v3.0.
+Read more [here](./LICENSE).
