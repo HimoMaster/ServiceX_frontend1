@@ -15,4 +15,5 @@
       "py-tgcalls",
       "musicplayer"
     ],
- 
+    "env": {
+      "API_ID": {
