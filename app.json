@@ -17,4 +17,4 @@
     ],
     "env": {
       "API_ID": {
-        "description": "Telegram
+        "description": "Telegram app id, get it from https://my.te
