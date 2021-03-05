@@ -21,4 +21,5 @@
         "required": true
       },
       "API_HASH": {
-        "description": "Telegram app ha
+        "description": "Telegram app hash, get it from https://my.telegram.org/apps",
+   
