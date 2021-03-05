@@ -19,3 +19,6 @@
       "API_ID": {
         "description": "Telegram app id, get it from https://my.telegram.org/apps",
         "required": true
+      },
+      "API_HASH": {
+        
