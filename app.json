@@ -25,4 +25,4 @@
         "required": true
       },
       "SESSION": {
-        "description": "Pyr
+        "description": "Pyrogram session string, get it from https://r
