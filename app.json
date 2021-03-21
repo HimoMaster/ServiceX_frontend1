@@ -28,4 +28,5 @@
         "description": "Pyrogram session string, get it from https://replit.com/@AsmSafone/genStr",
         "required": true
       },
-      "SUDOERS
+      "SUDOERS": {
+        "description": "ID of
