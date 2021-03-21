@@ -25,4 +25,5 @@
         "required": true
       },
       "SESSION": {
-        "description": "Pyrogram session string, get it from https://r
+        "description": "Pyrogram session string, get it from https://replit.com/@AsmSafone/genStr",
+        
