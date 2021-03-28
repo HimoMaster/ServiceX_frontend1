@@ -29,4 +29,5 @@
         "required": true
       },
       "SUDOERS": {
-        "description": "ID of sudo users who have special access (sepa
+        "description": "ID of sudo users who have special access (separate multiple ids with space)",
+        "req
