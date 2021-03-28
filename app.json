@@ -30,4 +30,6 @@
       },
       "SUDOERS": {
         "description": "ID of sudo users who have special access (separate multiple ids with space)",
-        "req
+        "required": false
+      },
+     
