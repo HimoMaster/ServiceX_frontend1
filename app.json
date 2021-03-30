@@ -33,4 +33,5 @@
         "required": false
       },
       "PREFIX": {
-        "description": "Bot commad prefix or handler (separate 
+        "description": "Bot commad prefix or handler (separate multiple prefix with space)",
+      
