@@ -38,4 +38,5 @@
         "required": false
       },
       "LANGUAGE": {
-        "description": "An available bot language (r
+        "description": "An available bot language (read the README.md for more info)",
+  
