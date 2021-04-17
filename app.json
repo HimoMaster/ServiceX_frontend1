@@ -43,4 +43,4 @@
         "required": false
       },
       "QUALITY": {
-        "description": "An available stream qual
+        "description": "An available stream quality (read the README.md for more info)
