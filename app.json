@@ -45,4 +45,6 @@
       "QUALITY": {
         "description": "An available stream quality (read the README.md for more info)",
         "value": "high",
-     
+        "required": false
+      }
+   
