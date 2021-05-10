@@ -56,4 +56,4 @@
     },
     "buildpacks": [
       {
-        "url": "https://gi
+        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-late
