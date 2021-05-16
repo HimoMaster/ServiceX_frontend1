@@ -59,4 +59,7 @@
         "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
       },
       {
-        "url": "herok
+        "url": "heroku/python"
+      }
+    ]
+  }
