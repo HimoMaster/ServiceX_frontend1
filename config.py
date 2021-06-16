@@ -23,4 +23,5 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-class Con
+class Config:
+    def __init__(self) -
