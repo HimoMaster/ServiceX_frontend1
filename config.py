@@ -26,4 +26,4 @@ load_dotenv()
 class Config:
     def __init__(self) -> None:
         self.API_ID: str = os.environ.get("API_ID", None)
-        sel
+        self.API_HASH: str = os.environ.get("
