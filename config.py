@@ -32,4 +32,5 @@ class Config:
             int(id) for id in os.environ.get("SUDOERS", " ").split() if id.isnumeric()
         ]
         if not self.SESSION or not self.API_ID or not self.API_HASH:
-            print("Error: SESSION, API_ID and API_HA
+            print("Error: SESSION, API_ID and API_HASH is required!")
+           
