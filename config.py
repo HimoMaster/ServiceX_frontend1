@@ -28,4 +28,5 @@ class Config:
         self.API_ID: str = os.environ.get("API_ID", None)
         self.API_HASH: str = os.environ.get("API_HASH", None)
         self.SESSION: str = os.environ.get("SESSION", None)
-     
+        self.SUDOERS: list = [
+          
