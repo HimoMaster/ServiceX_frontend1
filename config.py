@@ -31,4 +31,5 @@ class Config:
         self.SUDOERS: list = [
             int(id) for id in os.environ.get("SUDOERS", " ").split() if id.isnumeric()
         ]
-        if not self.SESSION or
+        if not self.SESSION or not self.API_ID or not self.API_HASH:
+     
