@@ -30,4 +30,5 @@ class Config:
         self.SESSION: str = os.environ.get("SESSION", None)
         self.SUDOERS: list = [
             int(id) for id in os.environ.get("SUDOERS", " ").split() if id.isnumeric()
-  
+        ]
+        if not self.SESSION or
