@@ -35,4 +35,5 @@ class Config:
             print("Error: SESSION, API_ID and API_HASH is required!")
             quit(0)
         self.QUALITY: str = os.environ.get("QUALITY", "high").lower()
-        self.PREFIXES: list = os
+        self.PREFIXES: list = os.environ.get("PREFIX", "!").split()
+    
