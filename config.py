@@ -39,4 +39,4 @@ class Config:
         self.LANGUAGE: str = os.environ.get("LANGUAGE", "en").lower()
 
 
-config = Conf
+config = Config()
