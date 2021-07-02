@@ -36,4 +36,7 @@ class Config:
             quit(0)
         self.QUALITY: str = os.environ.get("QUALITY", "high").lower()
         self.PREFIXES: list = os.environ.get("PREFIX", "!").split()
-        self.LANGUAGE: str = os.environ.g
+        self.LANGUAGE: str = os.environ.get("LANGUAGE", "en").lower()
+
+
+config = Conf
