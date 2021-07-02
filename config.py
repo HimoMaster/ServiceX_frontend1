@@ -34,4 +34,4 @@ class Config:
         if not self.SESSION or not self.API_ID or not self.API_HASH:
             print("Error: SESSION, API_ID and API_HASH is required!")
             quit(0)
-        self.QUALITY: str = os.env
+        self.QUALITY: str = os.environ.get("QUALITY", "high").lowe
