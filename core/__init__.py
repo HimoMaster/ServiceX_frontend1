@@ -1,3 +1,3 @@
 """
 Music Player, Telegram Voice Chat Bot
-Cop
+Copyright (c) 2021  Twist Bots <https://git
