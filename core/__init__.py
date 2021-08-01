@@ -19,3 +19,5 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 from core.song import Song
 from core.groups import (
     get_group, get_queue, set_group, set_title, all_groups, clear_queue,
+    set_default, shuffle_queue)
+from co
