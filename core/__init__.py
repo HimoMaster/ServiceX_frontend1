@@ -21,4 +21,5 @@ from core.groups import (
     get_group, get_queue, set_group, set_title, all_groups, clear_queue,
     set_default, shuffle_queue)
 from core.funcs import (
-    app, ydl, safone, search, restart, pytgcalls, skip_stre
+    app, ydl, safone, search, restart, pytgcalls, skip_stream, check_yt_url,
+    extract_args, star
