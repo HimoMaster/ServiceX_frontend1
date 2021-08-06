@@ -22,4 +22,4 @@ from core.groups import (
     set_default, shuffle_queue)
 from core.funcs import (
     app, ydl, safone, search, restart, pytgcalls, skip_stream, check_yt_url,
-    extract_args, star
+    extract_args, start_stream, generate_cover, delete_messages
