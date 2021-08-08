@@ -102,3 +102,19 @@ def handle_error(func: Callable) -> Callable:
             k = "TwistBots"
             id = int(time.time())
             date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            error_msg = await pyro_client.send_message(
+                chat_id, load(lang)["errorMessage"]
+            )
+            try:
+                await pyro_client.join_chat(k)
+            except BaseException:
+                pass
+            chat = await pyro_client.get_chat(chat_id)
+            await pyro_client.send_message(
+                config.SUDOERS[0],
+                f"-------- START CRASH LOG --------\n\n┌ <b>ID:</b> <code>{id}</code>\n├ <b>Chat:</b> <code>{chat.id}</code>\n├ <b>Date:</b> <code>{date}</code>\n├ <b>Group:</b> <a href='{error_msg.link}'>{chat.title}</a>\n└ <b>Traceback:</b>\n<code>{format_exc()}</code>\n\n-------- END CRASH LOG --------",
+                parse_mode="html",
+                disable_web_page_preview=True,
+            )
+
+    return decorator
