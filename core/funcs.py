@@ -23,4 +23,5 @@ import time
 import random
 import aiohttp
 import asyncio
-import aiofil
+import aiofiles
+from config import c
