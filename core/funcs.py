@@ -24,4 +24,6 @@ import random
 import aiohttp
 import asyncio
 import aiofiles
-from config import c
+from config import config
+from core.song import Song
+from pyrog
