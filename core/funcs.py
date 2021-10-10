@@ -26,4 +26,5 @@ import asyncio
 import aiofiles
 from config import config
 from core.song import Song
-from pyrog
+from pyrogram import Client
+from pytube
