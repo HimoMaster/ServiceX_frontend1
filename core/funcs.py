@@ -27,4 +27,5 @@ import aiofiles
 from config import config
 from core.song import Song
 from pyrogram import Client
-from pytube
+from pytube import Playlist
+from yt_dlp import Yo
