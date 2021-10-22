@@ -29,4 +29,5 @@ from core.song import Song
 from pyrogram import Client
 from pytube import Playlist
 from yt_dlp import YoutubeDL
-from pyrogram.types
+from pyrogram.types import Message
+from PIL import Im
