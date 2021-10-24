@@ -31,4 +31,5 @@ from pytube import Playlist
 from yt_dlp import YoutubeDL
 from pyrogram.types import Message
 from PIL import Image, ImageDraw, ImageFont
-from pytgcalls impo
+from pytgcalls import PyTgCalls, StreamType
+from core.gr
