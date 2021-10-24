@@ -32,4 +32,5 @@ from yt_dlp import YoutubeDL
 from pyrogram.types import Message
 from PIL import Image, ImageDraw, ImageFont
 from pytgcalls import PyTgCalls, StreamType
-from core.gr
+from core.groups import get_group, set_title
+fr
