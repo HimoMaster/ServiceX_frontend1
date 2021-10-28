@@ -33,4 +33,5 @@ from pyrogram.types import Message
 from PIL import Image, ImageDraw, ImageFont
 from pytgcalls import PyTgCalls, StreamType
 from core.groups import get_group, set_title
-from youtubesearchpython import VideosSe
+from youtubesearchpython import VideosSearch
+from typing import Tuple, Uni
