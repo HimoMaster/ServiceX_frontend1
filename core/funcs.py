@@ -34,4 +34,5 @@ from PIL import Image, ImageDraw, ImageFont
 from pytgcalls import PyTgCalls, StreamType
 from core.groups import get_group, set_title
 from youtubesearchpython import VideosSearch
-from typing import Tuple, Uni
+from typing import Tuple, Union, Optional, AsyncIterator
+from pyt
