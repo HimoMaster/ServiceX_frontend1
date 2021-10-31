@@ -37,4 +37,4 @@ from youtubesearchpython import VideosSearch
 from typing import Tuple, Union, Optional, AsyncIterator
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import (
-    LowQualit
+    LowQualityAudio, LowQualityVideo, HighQualityAu
