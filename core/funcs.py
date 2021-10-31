@@ -35,4 +35,4 @@ from pytgcalls import PyTgCalls, StreamType
 from core.groups import get_group, set_title
 from youtubesearchpython import VideosSearch
 from typing import Tuple, Union, Optional, AsyncIterator
-from pyt
+from pytgcalls.types.input_stream import AudioPiped, Audi
