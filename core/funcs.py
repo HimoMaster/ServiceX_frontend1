@@ -36,4 +36,5 @@ from core.groups import get_group, set_title
 from youtubesearchpython import VideosSearch
 from typing import Tuple, Union, Optional, AsyncIterator
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
-from pytgcalls.types.input_s
+from pytgcalls.types.input_stream.quality import (
+    LowQualit
