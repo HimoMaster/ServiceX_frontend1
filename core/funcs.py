@@ -43,4 +43,6 @@ from pytgcalls.types.input_stream.quality import (
 
 safone = {}
 ydl_opts = {
+    "quiet": True,
+    "geo_bypass": True,
  
