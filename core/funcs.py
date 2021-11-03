@@ -45,4 +45,6 @@ safone = {}
 ydl_opts = {
     "quiet": True,
     "geo_bypass": True,
- 
+    "nocheckcertificate": True,
+}
+ydl = Y
