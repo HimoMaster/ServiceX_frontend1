@@ -48,4 +48,4 @@ ydl_opts = {
     "nocheckcertificate": True,
 }
 ydl = YoutubeDL(ydl_opts)
-app = Client(con
+app = Client(config.SESSION, api_id=config.API_ID, ap
