@@ -47,4 +47,5 @@ ydl_opts = {
     "geo_bypass": True,
     "nocheckcertificate": True,
 }
-ydl = Y
+ydl = YoutubeDL(ydl_opts)
+app = Client(con
