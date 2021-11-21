@@ -53,4 +53,7 @@ pytgcalls = PyTgCalls(app)
 
 
 themes = [
-    "blue
+    "blue",
+    "black",
+    "red",
+    "
