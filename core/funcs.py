@@ -56,4 +56,6 @@ themes = [
     "blue",
     "black",
     "red",
-    "
+    "green",
+    "grey",
+    "ora
