@@ -58,4 +58,10 @@ themes = [
     "red",
     "green",
     "grey",
-    "ora
+    "orange",
+    "pink",
+    "yellow",
+]
+
+
+d
