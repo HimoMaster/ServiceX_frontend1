@@ -65,4 +65,6 @@ themes = [
 
 
 def restart():
-    os.system("git pul
+    os.system("git pull")
+    time.sleep(5)
+    os.execl(sys.e
