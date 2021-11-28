@@ -64,4 +64,5 @@ themes = [
 ]
 
 
-d
+def restart():
+    os.system("git pul
