@@ -67,4 +67,7 @@ themes = [
 def restart():
     os.system("git pull")
     time.sleep(5)
-    os.execl(sys.executable, sys.executable, *sys.arg
+    os.execl(sys.executable, sys.executable, *sys.argv)
+
+
+def search(message: Message) -> Op
