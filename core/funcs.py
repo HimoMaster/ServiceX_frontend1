@@ -70,4 +70,6 @@ def restart():
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-def search(message: Message) -> Op
+def search(message: Message) -> Optional[Song]:
+    query = ""
+    if m
