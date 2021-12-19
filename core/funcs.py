@@ -74,4 +74,5 @@ def search(message: Message) -> Optional[Song]:
     query = ""
     if message.reply_to_message:
         if message.reply_to_message.audio:
-            query = message.reply_
+            query = message.reply_to_message.audio.title
+        elif messag
