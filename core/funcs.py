@@ -73,4 +73,5 @@ def restart():
 def search(message: Message) -> Optional[Song]:
     query = ""
     if message.reply_to_message:
-        if 
+        if message.reply_to_message.audio:
+     
