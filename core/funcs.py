@@ -78,4 +78,4 @@ def search(message: Message) -> Optional[Song]:
         elif message.reply_to_message.video:
             query = message.reply_to_message.video.file_name
         elif message.reply_to_message.document:
-            qu
+            query = message.reply_to_message.document.fil
