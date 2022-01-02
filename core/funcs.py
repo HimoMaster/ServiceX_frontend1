@@ -80,4 +80,5 @@ def search(message: Message) -> Optional[Song]:
         elif message.reply_to_message.document:
             query = message.reply_to_message.document.file_name
         else:
-            query
+            query = message.reply_to_message.text
+    el
