@@ -81,4 +81,5 @@ def search(message: Message) -> Optional[Song]:
             query = message.reply_to_message.document.file_name
         else:
             query = message.reply_to_message.text
-    el
+    else:
+        query = extract_args(message.text
