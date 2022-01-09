@@ -85,4 +85,5 @@ def search(message: Message) -> Optional[Song]:
         query = extract_args(message.text)
     if query == "":
         return None
-    is_yt_u
+    is_yt_url, url = check_yt_url(query)
+    if is_yt_
