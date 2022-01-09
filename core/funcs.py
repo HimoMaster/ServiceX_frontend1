@@ -86,4 +86,6 @@ def search(message: Message) -> Optional[Song]:
     if query == "":
         return None
     is_yt_url, url = check_yt_url(query)
-    if is_yt_
+    if is_yt_url:
+        return Song(url, message)
+    group
