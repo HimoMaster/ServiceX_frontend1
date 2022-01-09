@@ -82,4 +82,7 @@ def search(message: Message) -> Optional[Song]:
         else:
             query = message.reply_to_message.text
     else:
-        query = extract_args(message.text
+        query = extract_args(message.text)
+    if query == "":
+        return None
+    is_yt_u
