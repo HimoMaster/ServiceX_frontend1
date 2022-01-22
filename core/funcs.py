@@ -88,4 +88,5 @@ def search(message: Message) -> Optional[Song]:
     is_yt_url, url = check_yt_url(query)
     if is_yt_url:
         return Song(url, message)
-    group
+    group = get_group(message.chat.id)
+    vs
