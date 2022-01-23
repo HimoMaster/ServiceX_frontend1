@@ -89,4 +89,5 @@ def search(message: Message) -> Optional[Song]:
     if is_yt_url:
         return Song(url, message)
     group = get_group(message.chat.id)
-    vs
+    vs = VideosSearch(
+        quer
