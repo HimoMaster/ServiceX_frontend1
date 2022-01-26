@@ -90,4 +90,4 @@ def search(message: Message) -> Optional[Song]:
         return Song(url, message)
     group = get_group(message.chat.id)
     vs = VideosSearch(
-        quer
+        query, limit=1, language=group["lang"], reg
