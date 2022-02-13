@@ -92,4 +92,4 @@ def search(message: Message) -> Optional[Song]:
     vs = VideosSearch(
         query, limit=1, language=group["lang"], region=group["lang"]
     ).result()
-    
+    if len(vs["result"]) > 0 and vs["res
