@@ -93,4 +93,5 @@ def search(message: Message) -> Optional[Song]:
         query, limit=1, language=group["lang"], region=group["lang"]
     ).result()
     if len(vs["result"]) > 0 and vs["result"][0]["type"] == "video":
-        video = vs["result"][
+        video = vs["result"][0]
+        return Song(video["link"], 
