@@ -94,4 +94,8 @@ def search(message: Message) -> Optional[Song]:
     ).result()
     if len(vs["result"]) > 0 and vs["result"][0]["type"] == "video":
         video = vs["result"][0]
-        return Song(video["link"], 
+        return Song(video["link"], message)
+    return None
+
+
+def check_yt
