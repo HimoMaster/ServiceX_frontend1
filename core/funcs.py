@@ -98,4 +98,4 @@ def search(message: Message) -> Optional[Song]:
     return None
 
 
-def check_yt
+def check_yt_url(text: str) -> Tuple[bool, Optional[s
