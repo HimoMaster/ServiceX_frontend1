@@ -100,4 +100,4 @@ def search(message: Message) -> Optional[Song]:
 
 def check_yt_url(text: str) -> Tuple[bool, Optional[str]]:
     pattern = re.compile(
-        "^((?:https?:)?\\/\\/)?((?:www|m)
+        "^((?:https?:)?\\/\\/)?((?:www|m)\\.)?((?:youtube\\.com|youtu.be))(\\
