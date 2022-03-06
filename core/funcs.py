@@ -106,4 +106,4 @@ def check_yt_url(text: str) -> Tuple[bool, Optional[str]]:
     if len(matches) <= 0:
         return False, None
 
-    mat
+    match = "".join(list(matches[0]))
