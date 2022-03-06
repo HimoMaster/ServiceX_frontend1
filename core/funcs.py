@@ -104,4 +104,6 @@ def check_yt_url(text: str) -> Tuple[bool, Optional[str]]:
     )
     matches = re.findall(pattern, text)
     if len(matches) <= 0:
-   
+        return False, None
+
+    mat
