@@ -107,3 +107,7 @@ def check_yt_url(text: str) -> Tuple[bool, Optional[str]]:
         return False, None
 
     match = "".join(list(matches[0]))
+    return True, match
+
+
+def extract_args(text
