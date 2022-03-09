@@ -110,4 +110,6 @@ def check_yt_url(text: str) -> Tuple[bool, Optional[str]]:
     return True, match
 
 
-def extract_args(text
+def extract_args(text: str) -> str:
+    if " " not in text:
+    
