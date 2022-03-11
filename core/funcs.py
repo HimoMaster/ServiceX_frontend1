@@ -112,4 +112,6 @@ def check_yt_url(text: str) -> Tuple[bool, Optional[str]]:
 
 def extract_args(text: str) -> str:
     if " " not in text:
-    
+        return ""
+    else:
+        retu
