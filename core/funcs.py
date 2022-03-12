@@ -117,4 +117,4 @@ def extract_args(text: str) -> str:
         return text.split(" ", 1)[1]
 
 
-def get_
+def get_quality(song: Song) -> Union[AudioPip
