@@ -120,4 +120,5 @@ def extract_args(text: str) -> str:
 def get_quality(song: Song) -> Union[AudioPiped, AudioVideoPiped]:
     group = get_group(song.request_msg.chat.id)
     if group["is_video"]:
-        if config.Q
+        if config.QUALITY.lower() == "high":
+            return 
