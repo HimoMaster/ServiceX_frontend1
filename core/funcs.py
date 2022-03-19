@@ -121,4 +121,5 @@ def get_quality(song: Song) -> Union[AudioPiped, AudioVideoPiped]:
     group = get_group(song.request_msg.chat.id)
     if group["is_video"]:
         if config.QUALITY.lower() == "high":
-            return 
+            return AudioVideoPiped(
+                s
