@@ -128,4 +128,5 @@ def get_quality(song: Song) -> Union[AudioPiped, AudioVideoPiped]:
             return AudioVideoPiped(
                 song.remote_url,
                 MediumQualityAudio(),
-                MediumQ
+                MediumQualityVideo(),
+                
