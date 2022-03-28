@@ -131,4 +131,5 @@ def get_quality(song: Song) -> Union[AudioPiped, AudioVideoPiped]:
                 MediumQualityVideo(),
                 song.headers,
             )
-      
+        elif config.QUALITY.lower() == "low":
+   
