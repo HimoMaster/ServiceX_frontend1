@@ -133,4 +133,4 @@ def get_quality(song: Song) -> Union[AudioPiped, AudioVideoPiped]:
             )
         elif config.QUALITY.lower() == "low":
             return AudioVideoPiped(
-               
+                song.remote_url, LowQualityAudio(), L
