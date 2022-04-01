@@ -136,4 +136,5 @@ def get_quality(song: Song) -> Union[AudioPiped, AudioVideoPiped]:
                 song.remote_url, LowQualityAudio(), LowQualityVideo(), song.headers
             )
         else:
-            print("Inva
+            print("Invalid Quality Specified. Defaulting to High!")
+       
