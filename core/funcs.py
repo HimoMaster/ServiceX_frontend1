@@ -138,4 +138,4 @@ def get_quality(song: Song) -> Union[AudioPiped, AudioVideoPiped]:
         else:
             print("Invalid Quality Specified. Defaulting to High!")
             return AudioVideoPiped(
-   
+                song.remote_url, HighQualityAudio(), Hi
