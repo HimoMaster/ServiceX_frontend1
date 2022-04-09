@@ -143,4 +143,5 @@ def get_quality(song: Song) -> Union[AudioPiped, AudioVideoPiped]:
     else:
         if config.QUALITY.lower() == "high":
             return AudioPiped(song.remote_url, HighQualityAudio(), song.headers)
-        elif confi
+        elif config.QUALITY.lower() == "medium":
+    
