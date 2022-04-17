@@ -152,4 +152,5 @@ def get_quality(song: Song) -> Union[AudioPiped, AudioVideoPiped]:
             return AudioPiped(song.remote_url, HighQualityAudio(), song.headers)
 
 
-async def delete_messages
+async def delete_messages(messages):
+    await async
