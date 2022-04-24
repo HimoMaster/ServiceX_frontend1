@@ -154,4 +154,5 @@ def get_quality(song: Song) -> Union[AudioPiped, AudioVideoPiped]:
 
 async def delete_messages(messages):
     await asyncio.sleep(10)
-    for msg in mess
+    for msg in messages:
+        if msg.chat.type == "su
