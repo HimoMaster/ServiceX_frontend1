@@ -157,4 +157,5 @@ async def delete_messages(messages):
     for msg in messages:
         if msg.chat.type == "supergroup":
             try:
-           
+                await msg.delete()
+            excep
