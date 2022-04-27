@@ -159,4 +159,7 @@ async def delete_messages(messages):
             try:
                 await msg.delete()
             except BaseException:
-                p
+                pass
+
+
+async def skip_stream(song: Song, lang):
