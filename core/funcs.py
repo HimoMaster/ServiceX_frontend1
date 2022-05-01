@@ -167,4 +167,6 @@ async def skip_stream(song: Song, lang):
     if safone.get(chat.id) is not None:
         try:
             await safone[chat.id].delete()
-        except Base
+        except BaseException:
+            pass
+    inf
