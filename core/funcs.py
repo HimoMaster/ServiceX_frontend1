@@ -169,4 +169,4 @@ async def skip_stream(song: Song, lang):
             await safone[chat.id].delete()
         except BaseException:
             pass
-    inf
+    infomsg = await song.request_msg.reply_t
