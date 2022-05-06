@@ -169,4 +169,5 @@ async def skip_stream(song: Song, lang):
             await safone[chat.id].delete()
         except BaseException:
             pass
-    infomsg = await song.request_msg.reply_t
+    infomsg = await song.request_msg.reply_text(lang["downloading"])
+    await pytgcalls.chan
