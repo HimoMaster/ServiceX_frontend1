@@ -170,4 +170,6 @@ async def skip_stream(song: Song, lang):
         except BaseException:
             pass
     infomsg = await song.request_msg.reply_text(lang["downloading"])
-    await pytgcalls.chan
+    await pytgcalls.change_stream(
+        chat.id,
+        get_qua
