@@ -172,4 +172,6 @@ async def skip_stream(song: Song, lang):
     infomsg = await song.request_msg.reply_text(lang["downloading"])
     await pytgcalls.change_stream(
         chat.id,
-        get_qua
+        get_quality(song),
+    )
+    await set_title(ch
