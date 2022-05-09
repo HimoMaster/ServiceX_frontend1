@@ -174,4 +174,5 @@ async def skip_stream(song: Song, lang):
         chat.id,
         get_quality(song),
     )
-    await set_title(ch
+    await set_title(chat.id, song.title, client=app)
+    thumb = 
