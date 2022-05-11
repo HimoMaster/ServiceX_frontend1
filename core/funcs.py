@@ -176,4 +176,6 @@ async def skip_stream(song: Song, lang):
     )
     await set_title(chat.id, song.title, client=app)
     thumb = await generate_cover(
-       
+        song.title,
+        chat.title,
+   
