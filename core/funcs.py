@@ -180,3 +180,5 @@ async def skip_stream(song: Song, lang):
         chat.title,
         chat.id,
         song.thumb,
+    )
+    safone[chat.id] = await so
