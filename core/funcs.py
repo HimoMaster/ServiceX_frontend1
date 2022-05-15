@@ -184,4 +184,6 @@ async def skip_stream(song: Song, lang):
     safone[chat.id] = await song.request_msg.reply_photo(
         photo=thumb,
         caption=lang["playing"]
- 
+        % (
+            song.title,
+     
