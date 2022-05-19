@@ -187,4 +187,5 @@ async def skip_stream(song: Song, lang):
         % (
             song.title,
             song.yt_url,
-            song.durat
+            song.duration,
+            song.request_msg.c
