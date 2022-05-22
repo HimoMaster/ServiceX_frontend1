@@ -190,3 +190,4 @@ async def skip_stream(song: Song, lang):
             song.duration,
             song.request_msg.chat.id,
             song.requested_by.mention
+            if song.requested_b
