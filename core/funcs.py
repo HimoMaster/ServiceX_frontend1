@@ -194,3 +194,6 @@ async def skip_stream(song: Song, lang):
             else song.request_msg.sender_chat.title,
         ),
         quote=False,
+    )
+    await infomsg.delete()
+    if o
