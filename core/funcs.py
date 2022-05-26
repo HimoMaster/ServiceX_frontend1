@@ -196,4 +196,5 @@ async def skip_stream(song: Song, lang):
         quote=False,
     )
     await infomsg.delete()
-    if o
+    if os.path.exists(thumb):
+        os.remov
