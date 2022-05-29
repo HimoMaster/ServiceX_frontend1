@@ -200,4 +200,6 @@ async def skip_stream(song: Song, lang):
         os.remove(thumb)
 
 
-async def start_stream(song: Song, 
+async def start_stream(song: Song, lang):
+    chat = song.request_msg.chat
+  
