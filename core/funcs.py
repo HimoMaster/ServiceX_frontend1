@@ -202,4 +202,4 @@ async def skip_stream(song: Song, lang):
 
 async def start_stream(song: Song, lang):
     chat = song.request_msg.chat
-  
+    if safone.get(chat.id) is not
