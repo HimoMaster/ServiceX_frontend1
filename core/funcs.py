@@ -207,4 +207,4 @@ async def start_stream(song: Song, lang):
             await safone[chat.id].delete()
         except BaseException:
             pass
-    in
+    infomsg = await song.request_msg.reply_text(lang
