@@ -207,4 +207,5 @@ async def start_stream(song: Song, lang):
             await safone[chat.id].delete()
         except BaseException:
             pass
-    infomsg = await song.request_msg.reply_text(lang
+    infomsg = await song.request_msg.reply_text(lang["downloading"])
+    await pytgcalls.jo
