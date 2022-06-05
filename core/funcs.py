@@ -210,4 +210,5 @@ async def start_stream(song: Song, lang):
     infomsg = await song.request_msg.reply_text(lang["downloading"])
     await pytgcalls.join_group_call(
         chat.id,
-   
+        get_quality(song),
+        str
