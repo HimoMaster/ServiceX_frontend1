@@ -211,4 +211,5 @@ async def start_stream(song: Song, lang):
     await pytgcalls.join_group_call(
         chat.id,
         get_quality(song),
-        str
+        stream_type=StreamType().pulse_stream,
+    
