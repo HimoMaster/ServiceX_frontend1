@@ -213,4 +213,5 @@ async def start_stream(song: Song, lang):
         get_quality(song),
         stream_type=StreamType().pulse_stream,
     )
-    await set_title(chat.id, song.title,
+    await set_title(chat.id, song.title, client=app)
+    thumb = await generate_cove
