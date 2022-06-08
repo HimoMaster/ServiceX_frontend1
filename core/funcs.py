@@ -212,4 +212,5 @@ async def start_stream(song: Song, lang):
         chat.id,
         get_quality(song),
         stream_type=StreamType().pulse_stream,
-    
+    )
+    await set_title(chat.id, song.title,
