@@ -217,4 +217,7 @@ async def start_stream(song: Song, lang):
     thumb = await generate_cover(
         song.title,
         chat.title,
+        chat.id,
+        song.thumb,
+    )
     
