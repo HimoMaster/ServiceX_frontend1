@@ -220,4 +220,5 @@ async def start_stream(song: Song, lang):
         chat.id,
         song.thumb,
     )
-    safone[chat.id] = await song.request
+    safone[chat.id] = await song.request_msg.reply_photo(
+        photo=thum
