@@ -225,4 +225,6 @@ async def start_stream(song: Song, lang):
         caption=lang["playing"]
         % (
             song.title,
-           
+            song.yt_url,
+            song.duration,
+     
