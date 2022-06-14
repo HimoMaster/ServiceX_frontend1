@@ -227,4 +227,5 @@ async def start_stream(song: Song, lang):
             song.title,
             song.yt_url,
             song.duration,
-            song.request_msg.ch
+            song.request_msg.chat.id,
+            song.requested_by.m
