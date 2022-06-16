@@ -230,4 +230,6 @@ async def start_stream(song: Song, lang):
             song.request_msg.chat.id,
             song.requested_by.mention
             if song.requested_by
-            else song.request_msg.sender_ch
+            else song.request_msg.sender_chat.title,
+        ),
+        quote
