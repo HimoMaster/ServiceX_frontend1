@@ -232,4 +232,6 @@ async def start_stream(song: Song, lang):
             if song.requested_by
             else song.request_msg.sender_chat.title,
         ),
-        quote
+        quote=False,
+    )
+    await infomsg.delete()
