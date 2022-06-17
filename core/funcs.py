@@ -235,3 +235,5 @@ async def start_stream(song: Song, lang):
         quote=False,
     )
     await infomsg.delete()
+    if os.path.exists(thumb):
+       
