@@ -239,4 +239,6 @@ async def start_stream(song: Song, lang):
         os.remove(thumb)
 
 
-def changeImageSize(maxWidth, maxHeight, image)
+def changeImageSize(maxWidth, maxHeight, image):
+    widthRatio = maxWidth / image.size[0]
+ 
