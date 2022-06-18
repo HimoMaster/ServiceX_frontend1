@@ -239,4 +239,4 @@ async def start_stream(song: Song, lang):
         os.remove(thumb)
 
 
-def changeImag
+def changeImageSize(maxWidth, maxHeight, image)
