@@ -243,4 +243,5 @@ def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
     heightRatio = maxHeight / image.size[1]
     newWidth = int(widthRatio * image.size[0])
-    newHeight = int(
+    newHeight = int(heightRatio * image.size[1])
+    newImage
