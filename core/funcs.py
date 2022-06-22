@@ -242,4 +242,5 @@ async def start_stream(song: Song, lang):
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
     heightRatio = maxHeight / image.size[1]
-    newWidth = int(widthRatio * im
+    newWidth = int(widthRatio * image.size[0])
+    newHeight = int(
