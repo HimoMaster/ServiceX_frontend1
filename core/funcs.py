@@ -244,4 +244,8 @@ def changeImageSize(maxWidth, maxHeight, image):
     heightRatio = maxHeight / image.size[1]
     newWidth = int(widthRatio * image.size[0])
     newHeight = int(heightRatio * image.size[1])
-    newImage = image.resize((newWidth, newHe
+    newImage = image.resize((newWidth, newHeight))
+    return newImage
+
+
+async def ge
