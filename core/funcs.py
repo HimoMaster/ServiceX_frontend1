@@ -248,4 +248,4 @@ def changeImageSize(maxWidth, maxHeight, image):
     return newImage
 
 
-async def ge
+async def generate_cover(title, ctitle, chatid, thumbnail):
