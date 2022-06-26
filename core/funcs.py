@@ -249,3 +249,4 @@ def changeImageSize(maxWidth, maxHeight, image):
 
 
 async def generate_cover(title, ctitle, chatid, thumbnail):
+    async with aiohttp.ClientSession() as sess
