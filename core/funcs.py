@@ -252,4 +252,4 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
     async with aiohttp.ClientSession() as session:
         async with session.get(thumbnail) as resp:
             if resp.status == 200:
-                f = await ai
+                f = await aiofiles.open(f"thumb{chatid}.png", 
