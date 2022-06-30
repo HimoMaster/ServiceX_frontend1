@@ -253,4 +253,5 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
         async with session.get(thumbnail) as resp:
             if resp.status == 200:
                 f = await aiofiles.open(f"thumb{chatid}.png", mode="wb")
-                await f.wr
+                await f.write(await resp.read())
+                a
