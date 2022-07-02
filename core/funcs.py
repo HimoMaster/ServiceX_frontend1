@@ -254,4 +254,6 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
             if resp.status == 200:
                 f = await aiofiles.open(f"thumb{chatid}.png", mode="wb")
                 await f.write(await resp.read())
-                a
+                await f.close()
+
+    theme = random.choice
