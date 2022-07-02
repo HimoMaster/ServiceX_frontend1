@@ -256,4 +256,5 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
                 await f.write(await resp.read())
                 await f.close()
 
-    theme = random.choice
+    theme = random.choice(themes)
+    ctitle = await special_to_no
