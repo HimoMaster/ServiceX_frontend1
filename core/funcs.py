@@ -260,4 +260,4 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
     ctitle = await special_to_normal(ctitle)
     image1 = Image.open(f"thumb{chatid}.png")
     image2 = Image.open(f"theme/{theme}.PNG")
-    imag
+    image3 = changeImageSize(1280, 720, ima
