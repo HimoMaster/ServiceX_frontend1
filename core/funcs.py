@@ -261,4 +261,5 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
     image1 = Image.open(f"thumb{chatid}.png")
     image2 = Image.open(f"theme/{theme}.PNG")
     image3 = changeImageSize(1280, 720, image1)
-    image4 = changeImageSize(1280, 72
+    image4 = changeImageSize(1280, 720, image2)
+    image5 = image3.convert("RGB
