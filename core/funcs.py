@@ -264,4 +264,5 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
     image4 = changeImageSize(1280, 720, image2)
     image5 = image3.convert("RGBA")
     image6 = image4.convert("RGBA")
-    Image.alpha_composite(image5,
+    Image.alpha_composite(image5, image6).save(f"temp{chatid}.png")
+    img 
