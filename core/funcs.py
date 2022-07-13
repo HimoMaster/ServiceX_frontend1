@@ -266,4 +266,5 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
     image6 = image4.convert("RGBA")
     Image.alpha_composite(image5, image6).save(f"temp{chatid}.png")
     img = Image.open(f"temp{chatid}.png")
-    draw
+    draw = ImageDraw.Draw(img)
+    font = Imag
