@@ -267,4 +267,5 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
     Image.alpha_composite(image5, image6).save(f"temp{chatid}.png")
     img = Image.open(f"temp{chatid}.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("theme/font.ttf"
+    font = ImageFont.truetype("theme/font.ttf", 85)
+    font2 = ImageFont.truetype("theme/font.ttf
