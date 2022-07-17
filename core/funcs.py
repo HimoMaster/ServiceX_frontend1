@@ -271,4 +271,6 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
     font2 = ImageFont.truetype("theme/font.ttf", 60)
     draw.text(
         (20, 45),
-        f"Playing on: {ctitle[:14]}.
+        f"Playing on: {ctitle[:14]}...",
+        fill="white",
+        stroke_width=1,
