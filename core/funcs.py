@@ -274,3 +274,4 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
         f"Playing on: {ctitle[:14]}...",
         fill="white",
         stroke_width=1,
+        stroke_fill="white
