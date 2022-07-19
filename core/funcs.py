@@ -279,4 +279,6 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
     )
     draw.text(
         (25, 595),
-        f"{title[:27]}.
+        f"{title[:27]}...",
+        fill="white",
+      
