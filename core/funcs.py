@@ -282,4 +282,7 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
         f"{title[:27]}...",
         fill="white",
         stroke_width=2,
-        stroke_fill="white
+        stroke_fill="white",
+        font=font,
+    )
+    img.sa
