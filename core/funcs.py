@@ -285,4 +285,5 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
         stroke_fill="white",
         font=font,
     )
-    img.sa
+    img.save(f"final{chatid}.png")
+    os.rem
