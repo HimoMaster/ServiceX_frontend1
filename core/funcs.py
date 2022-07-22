@@ -287,4 +287,5 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
     )
     img.save(f"final{chatid}.png")
     os.remove(f"temp{chatid}.png")
-    os.remo
+    os.remove(f"thumb{chatid}.png")
+    final
