@@ -294,4 +294,5 @@ async def generate_cover(title, ctitle, chatid, thumbnail):
 
 async def special_to_normal(ctitle):
     string = ctitle
-    font1 = list("𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖
+    font1 = list("𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ")
+    font2 = list("𝕬𝕭𝕮
