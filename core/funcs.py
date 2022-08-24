@@ -317,4 +317,6 @@ async def special_to_normal(ctitle):
     font30L = list("𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯")
     font31L = list("𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣")
     normal = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-    normalL = list("abcdef
+    normalL = list("abcdefghijklmnopqrstuvwxyz")
+    cout = 0
+    f
