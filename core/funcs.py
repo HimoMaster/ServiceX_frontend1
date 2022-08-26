@@ -319,4 +319,5 @@ async def special_to_normal(ctitle):
     normal = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     normalL = list("abcdefghijklmnopqrstuvwxyz")
     cout = 0
-    f
+    for XCB in font1:
+        stri
