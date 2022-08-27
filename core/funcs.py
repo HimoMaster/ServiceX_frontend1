@@ -320,4 +320,5 @@ async def special_to_normal(ctitle):
     normalL = list("abcdefghijklmnopqrstuvwxyz")
     cout = 0
     for XCB in font1:
-        string = string.replace(font1[cout], normal[c
+        string = string.replace(font1[cout], normal[cout])
+        string = string.replace(font2[c
