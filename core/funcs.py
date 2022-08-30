@@ -322,4 +322,5 @@ async def special_to_normal(ctitle):
     for XCB in font1:
         string = string.replace(font1[cout], normal[cout])
         string = string.replace(font2[cout], normal[cout])
-        string = string.replace(font3[cout]
+        string = string.replace(font3[cout], normal[cout])
+        string = string.
