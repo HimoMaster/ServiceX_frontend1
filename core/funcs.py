@@ -325,4 +325,4 @@ async def special_to_normal(ctitle):
         string = string.replace(font3[cout], normal[cout])
         string = string.replace(font4[cout], normal[cout])
         string = string.replace(font5[cout], normal[cout])
-        string 
+        string = string.replace(font6[cout], norma
