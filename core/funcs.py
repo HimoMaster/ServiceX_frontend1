@@ -346,4 +346,4 @@ async def special_to_normal(ctitle):
     return string
 
 
-async def get_youtube_playlist(pl_url: str
+async def get_youtube_playlist(pl_url: str, message: Message) -> As
