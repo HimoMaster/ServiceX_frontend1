@@ -349,3 +349,5 @@ async def special_to_normal(ctitle):
 async def get_youtube_playlist(pl_url: str, message: Message) -> AsyncIterator[Song]:
     pl = Playlist(pl_url)
     for i in range(len(list(pl))):
+        song = Song(pl[i], message)
+  
