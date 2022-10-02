@@ -351,4 +351,4 @@ async def get_youtube_playlist(pl_url: str, message: Message) -> AsyncIterator[S
     for i in range(len(list(pl))):
         song = Song(pl[i], message)
         song.title = pl.videos[i].title
-       
+        yield song
