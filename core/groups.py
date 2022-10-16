@@ -16,4 +16,6 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>
 """
 
-from config import confi
+from config import config
+from core.queue import Queue
+from
