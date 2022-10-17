@@ -19,4 +19,5 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 from config import config
 from core.queue import Queue
 from pyrogram.types import Message
-from ty
+from typing import Any, Dict, Union
+from pyrogram.raw.functions
