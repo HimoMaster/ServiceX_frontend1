@@ -24,4 +24,8 @@ from pyrogram.raw.functions.channels import GetFullChannel
 from pyrogram.raw.functions.phone import EditGroupCallTitle
 
 
-GROUPS: Dict[int, Dict[str, Any]] 
+GROUPS: Dict[int, Dict[str, Any]] = {}
+
+
+def all_groups():
+    return GROUPS.keys()
