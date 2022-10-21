@@ -29,3 +29,6 @@ GROUPS: Dict[int, Dict[str, Any]] = {}
 
 def all_groups():
     return GROUPS.keys()
+
+
+def set_default(chat_id: int) -> 
