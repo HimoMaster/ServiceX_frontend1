@@ -31,4 +31,6 @@ def all_groups():
     return GROUPS.keys()
 
 
-def set_default(chat_id: int) -> 
+def set_default(chat_id: int) -> None:
+    global GROUPS
+    GROUPS[chat_
