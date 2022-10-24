@@ -36,4 +36,5 @@ def set_default(chat_id: int) -> None:
     GROUPS[chat_id] = {}
     GROUPS[chat_id]["is_playing"] = False
     GROUPS[chat_id]["now_playing"] = None
-   
+    GROUPS[chat_id]["is_video"] = False
+    GROUPS
