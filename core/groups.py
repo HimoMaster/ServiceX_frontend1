@@ -39,4 +39,7 @@ def set_default(chat_id: int) -> None:
     GROUPS[chat_id]["is_video"] = False
     GROUPS[chat_id]["loop"] = False
     GROUPS[chat_id]["lang"] = config.LANGUAGE
-    GROU
+    GROUPS[chat_id]["queue"] = Queue()
+
+
+def 
