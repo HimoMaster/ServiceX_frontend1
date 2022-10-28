@@ -43,4 +43,7 @@ def set_default(chat_id: int) -> None:
 
 
 def get_group(chat_id) -> Dict[str, Any]:
- 
+    return GROUPS[chat_id]
+
+
+def set_g
