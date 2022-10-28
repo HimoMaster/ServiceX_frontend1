@@ -42,4 +42,5 @@ def set_default(chat_id: int) -> None:
     GROUPS[chat_id]["queue"] = Queue()
 
 
-def 
+def get_group(chat_id) -> Dict[str, Any]:
+ 
