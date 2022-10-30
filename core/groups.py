@@ -47,4 +47,5 @@ def get_group(chat_id) -> Dict[str, Any]:
 
 
 def set_group(chat_id: int, **kwargs) -> None:
-    glob
+    global GROUPS
+    for key, value in kwargs.items():
