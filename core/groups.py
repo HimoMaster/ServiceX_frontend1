@@ -46,4 +46,5 @@ def get_group(chat_id) -> Dict[str, Any]:
     return GROUPS[chat_id]
 
 
-def set_g
+def set_group(chat_id: int, **kwargs) -> None:
+    glob
