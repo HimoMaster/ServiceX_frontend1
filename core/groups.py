@@ -49,3 +49,7 @@ def get_group(chat_id) -> Dict[str, Any]:
 def set_group(chat_id: int, **kwargs) -> None:
     global GROUPS
     for key, value in kwargs.items():
+        GROUPS[chat_id][key] = value
+
+
+async 
