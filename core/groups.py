@@ -52,4 +52,5 @@ def set_group(chat_id: int, **kwargs) -> None:
         GROUPS[chat_id][key] = value
 
 
-async def set_title(message_or_chat_id: Un
+async def set_title(message_or_chat_id: Union[Message, int], title: str, **kw):
+    if
