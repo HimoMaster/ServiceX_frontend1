@@ -54,4 +54,5 @@ def set_group(chat_id: int, **kwargs) -> None:
 
 async def set_title(message_or_chat_id: Union[Message, int], title: str, **kw):
     if isinstance(message_or_chat_id, Message):
-        client = message_or_chat_id._cli
+        client = message_or_chat_id._client
+        chat_id = message_or_chat_id.cha
