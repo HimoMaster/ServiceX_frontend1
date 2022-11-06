@@ -58,4 +58,6 @@ async def set_title(message_or_chat_id: Union[Message, int], title: str, **kw):
         chat_id = message_or_chat_id.chat.id
     elif isinstance(message_or_chat_id, int):
         client = kw.get("client")
-        chat_id = message_or_ch
+        chat_id = message_or_chat_id
+    try:
+        peer = await cl
