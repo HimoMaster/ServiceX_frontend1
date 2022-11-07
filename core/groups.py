@@ -60,4 +60,5 @@ async def set_title(message_or_chat_id: Union[Message, int], title: str, **kw):
         client = kw.get("client")
         chat_id = message_or_chat_id
     try:
-        peer = await cl
+        peer = await client.resolve_peer(chat_id)
+        chat = await cli
