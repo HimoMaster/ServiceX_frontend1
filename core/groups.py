@@ -68,4 +68,7 @@ async def set_title(message_or_chat_id: Union[Message, int], title: str, **kw):
 
 
 def get_queue(chat_id: int) -> Queue:
-    return GROUPS[cha
+    return GROUPS[chat_id]["queue"]
+
+
+def clear_queu
