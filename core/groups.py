@@ -73,4 +73,8 @@ def get_queue(chat_id: int) -> Queue:
 
 def clear_queue(chat_id: int) -> None:
     global GROUPS
-    GROUPS[chat_id]["queue"].clear(
+    GROUPS[chat_id]["queue"].clear()
+
+
+def shuffle_queue(chat_id: int) -> Queue:
+ 
