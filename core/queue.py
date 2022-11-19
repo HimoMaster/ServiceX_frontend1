@@ -1,2 +1,3 @@
 """
-Music Play
+Music Player, Telegram Voice Chat Bot
+Copyright (
