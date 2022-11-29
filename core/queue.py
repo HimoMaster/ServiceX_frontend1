@@ -20,4 +20,5 @@ import random
 import asyncio
 
 
-class Queue(
+class Queue(asyncio.Queue):
+    def __i
