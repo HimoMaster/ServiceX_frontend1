@@ -21,4 +21,5 @@ import asyncio
 
 
 class Queue(asyncio.Queue):
-    def __i
+    def __init__(self) -> None:
+        super()._
