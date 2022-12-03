@@ -24,4 +24,6 @@ class Queue(asyncio.Queue):
     def __init__(self) -> None:
         super().__init__()
 
-    def clear(self) -> Non
+    def clear(self) -> None:
+        self._queue.clear()
+      
