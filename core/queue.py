@@ -28,4 +28,5 @@ class Queue(asyncio.Queue):
         self._queue.clear()
         self._init(0)
 
-    def shuffle(self) -> 
+    def shuffle(self) -> "Queue":
+        copy = list(self._queue.cop
