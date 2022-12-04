@@ -26,4 +26,6 @@ class Queue(asyncio.Queue):
 
     def clear(self) -> None:
         self._queue.clear()
-      
+        self._init(0)
+
+    def shuffle(self) -> 
