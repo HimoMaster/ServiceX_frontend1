@@ -31,4 +31,5 @@ class Queue(asyncio.Queue):
     def shuffle(self) -> "Queue":
         copy = list(self._queue.copy())
         copy.sort(key=lambda _: random.randint(0, 999999999))
-       
+        self.clear()
+        self._queue.ex
