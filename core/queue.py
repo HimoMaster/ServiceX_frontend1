@@ -32,4 +32,7 @@ class Queue(asyncio.Queue):
         copy = list(self._queue.copy())
         copy.sort(key=lambda _: random.randint(0, 999999999))
         self.clear()
-        self._queue.ex
+        self._queue.extend(copy)
+        return self
+
+    def __it
