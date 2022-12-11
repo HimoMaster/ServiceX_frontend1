@@ -35,4 +35,5 @@ class Queue(asyncio.Queue):
         self._queue.extend(copy)
         return self
 
-    def __it
+    def __iter__(self):
+        self.__index = 0
