@@ -37,3 +37,6 @@ class Queue(asyncio.Queue):
 
     def __iter__(self):
         self.__index = 0
+        return self
+
+    def __next__(self
