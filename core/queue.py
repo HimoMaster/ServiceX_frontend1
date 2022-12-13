@@ -39,4 +39,5 @@ class Queue(asyncio.Queue):
         self.__index = 0
         return self
 
-    def __next__(self
+    def __next__(self):
+        if self.__index >= len(se
