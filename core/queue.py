@@ -40,4 +40,5 @@ class Queue(asyncio.Queue):
         return self
 
     def __next__(self):
-        if self.__index >= len(se
+        if self.__index >= len(self):
+            raise StopItera
