@@ -43,4 +43,5 @@ class Queue(asyncio.Queue):
         if self.__index >= len(self):
             raise StopIteration
 
-        item = self._qu
+        item = self._queue[self.__index]
+        self.__index +=
