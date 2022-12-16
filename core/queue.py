@@ -47,4 +47,5 @@ class Queue(asyncio.Queue):
         self.__index += 1
         return item
 
-    def __l
+    def __len__(self):
+        return len(self._queue)
