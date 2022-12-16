@@ -44,4 +44,7 @@ class Queue(asyncio.Queue):
             raise StopIteration
 
         item = self._queue[self.__index]
-        self.__index +=
+        self.__index += 1
+        return item
+
+    def __l
