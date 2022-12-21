@@ -51,4 +51,6 @@ class Queue(asyncio.Queue):
         return len(self._queue)
 
     def __getitem__(self, index):
-        return self._qu
+        return self._queue[index]
+
+    def __str__(
