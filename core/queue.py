@@ -54,4 +54,6 @@ class Queue(asyncio.Queue):
         return self._queue[index]
 
     def __str__(self):
-        queue = list(self._q
+        queue = list(self._queue)
+        string = ""
+        for x, item 
