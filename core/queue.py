@@ -57,4 +57,5 @@ class Queue(asyncio.Queue):
         queue = list(self._queue)
         string = ""
         for x, item in enumerate(queue):
-            if x < 1
+            if x < 10:
+                string += f"**
