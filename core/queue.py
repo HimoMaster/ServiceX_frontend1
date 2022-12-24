@@ -56,4 +56,5 @@ class Queue(asyncio.Queue):
     def __str__(self):
         queue = list(self._queue)
         string = ""
-        for x, item 
+        for x, item in enumerate(queue):
+            if x < 1
