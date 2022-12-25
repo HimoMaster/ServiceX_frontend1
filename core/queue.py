@@ -58,4 +58,4 @@ class Queue(asyncio.Queue):
         string = ""
         for x, item in enumerate(queue):
             if x < 10:
-                string += f"**
+                string += f"**{x+1}. [{item.title}]({item.yt_url})** \n- Re
