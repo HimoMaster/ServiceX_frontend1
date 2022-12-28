@@ -61,4 +61,5 @@ class Queue(asyncio.Queue):
                 string += f"**{x+1}. [{item.title}]({item.yt_url})** \n- Requested By: {item.requested_by.mention}\n"
             else:
                 string += f"`\n...{len(queue)-10}`"
-                return st
+                return string
+        return string
