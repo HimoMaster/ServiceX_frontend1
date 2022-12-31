@@ -69,3 +69,41 @@ class Song:
             self._retries += 1
             return await self.parse()
         check_video = await self.check_remote_url(video["url"], video["http_headers"])
+        check_image = await self.check_remote_url(
+            video["thumbnail"], video["http_headers"]
+        )
+        if check_video and check_image:
+            if video["is_live"]:
+                return (False, "LIVE_STREAM_ERROR")
+            self.title = self._escape(video["title"])
+            self.duration = str(timedelta(seconds=video["duration"]))
+            self.thumb = video["thumbnail"]
+            self.remote_url = video["url"]
+            self.headers = video["http_headers"]
+            self.parsed = True
+            return (True, "PARSED")
+        else:
+            self._retries += 1
+            return await self.parse()
+
+    @staticmethod
+    async def check_remote_url(
+        path: str, headers: Optional[Dict[str, str]] = None
+    ) -> bool:
+        try:
+            session = ClientSession()
+            response = await session.get(path, timeout=5, headers=headers)
+            response.close()
+            await session.close()
+            if response.status == 200:
+                return True
+            else:
+                return False
+        except BaseException:
+            return False
+
+    @staticmethod
+    def _escape(_title: str) -> str:
+        title = _title
+        f = ["**", "__", "`", "~~", "--"]
+        for i in f:
