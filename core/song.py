@@ -107,3 +107,8 @@ class Song:
         title = _title
         f = ["**", "__", "`", "~~", "--"]
         for i in f:
+            title = title.replace(i, f"\\{i}")
+        return title
+
+    def to_dict(self) -> Dict[str, str]:
+        return {"title": self.title, "yt_url": self.yt_url}
