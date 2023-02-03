@@ -19,4 +19,5 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 from pyrogram import Client
 
 
-api_id = int(input("API I
+api_id = int(input("API ID: "))
+api_hash = input("API HASH: "
