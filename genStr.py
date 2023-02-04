@@ -20,4 +20,6 @@ from pyrogram import Client
 
 
 api_id = int(input("API ID: "))
-api_hash = input("API HASH: "
+api_hash = input("API HASH: ")
+
+app = Client(":memory:", api_id=api_
