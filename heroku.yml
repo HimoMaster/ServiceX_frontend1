@@ -1,2 +1,3 @@
 build:
-  docke
+  docker:
+      worker: Dockerfile
