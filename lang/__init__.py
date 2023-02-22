@@ -20,4 +20,4 @@ import json
 
 
 def load(lang):
-    return j
+    return json.load(open(f"./lang/{lang}.json", 
