@@ -147,3 +147,46 @@ async def live_stream(_, message: Message, lang):
         try:
             await start_stream(song, lang)
         except (NoActiveGroupCall, GroupCallNotFound):
+            peer = await app.resolve_peer(chat_id)
+            await app.send(
+                CreateGroupCall(
+                    peer=InputPeerChannel(
+                        channel_id=peer.channel_id,
+                        access_hash=peer.access_hash,
+                    ),
+                    random_id=app.rnd_id() // 9000000000,
+                )
+            )
+            await start_stream(song, lang)
+        await delete_messages([message])
+    else:
+        queue = get_queue(chat_id)
+        await queue.put(song)
+        k = await message.reply_text(
+            lang["addedToQueue"] % (song.title, song.yt_url, len(queue)),
+            disable_web_page_preview=True,
+        )
+        await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["skip", "next"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def skip_track(_, message: Message, lang):
+    chat_id = message.chat.id
+    group = get_group(chat_id)
+    if group["loop"]:
+        await skip_stream(group["now_playing"], lang)
+    else:
+        queue = get_queue(chat_id)
+        if len(queue) > 0:
+            next_song = await queue.get()
+            if not next_song.parsed:
+                ok, status = await next_song.parse()
+                if not ok:
