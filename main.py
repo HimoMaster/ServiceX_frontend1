@@ -33,3 +33,48 @@ from core.decorators import language, register, only_admins, handle_error
 from core import (
     app, ydl, safone, search, restart, get_group, get_queue, pytgcalls,
     set_group, set_title, all_groups, clear_queue, skip_stream, check_yt_url,
+    extract_args, start_stream, shuffle_queue, delete_messages,
+    get_youtube_playlist)
+
+
+REPO = """
+🤖 **Music Player**
+- Repo: [GitHub](https://github.com/TwistBots/MusicPlayer)
+- License: AGPL-3.0-or-later
+"""
+
+
+@app.on_message(
+    filters.command("repo", config.PREFIXES) & ~filters.private & ~filters.edited
+)
+@handle_error
+async def repo(_, message: Message):
+    await message.reply_text(REPO, disable_web_page_preview=True)
+
+
+@app.on_message(
+    filters.command("ping", config.PREFIXES) & ~filters.private & ~filters.edited
+)
+@handle_error
+async def ping(_, message: Message):
+    await message.reply_text(f"¤ **Pong!**\n`{await pytgcalls.ping} ms`")
+
+
+@app.on_message(
+    filters.command(["start", "help"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@language
+@only_admins
+@handle_error
+async def help(_, message: Message, lang):
+    await message.reply_text(lang["helpText"].replace("<prefix>", config.PREFIXES[0]))
+
+
+@app.on_message(
+    filters.command(["p", "play"], config.PREFIXES) & ~filters.private & ~filters.edited
+)
+@register
+@language
+@handle_error
