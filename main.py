@@ -113,3 +113,37 @@ async def play_stream(_, message: Message, lang):
             disable_web_page_preview=True,
         )
         await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["radio", "stream"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@handle_error
+async def live_stream(_, message: Message, lang):
+    chat_id = message.chat.id
+    group = get_group(chat_id)
+    link = extract_args(message.text)
+    if not link:
+        k = await message.reply_text(lang["notFound"])
+        return await delete_messages([message, k])
+    is_yt_url, url = check_yt_url(link)
+    if is_yt_url:
+        meta = ydl.extract_info(url, download=False)
+        formats = meta.get("formats", [meta])
+        for f in formats:
+            ytstreamlink = f["url"]
+        link = ytstreamlink
+    song = Song({"url": link}, message)
+    check = await song.check_remote_url(song.remote_url)
+    if not check:
+        k = await message.reply_text(lang["notFound"])
+        return await delete_messages([message, k])
+    if not group["is_playing"]:
+        set_group(chat_id, is_playing=True, now_playing=song)
+        try:
+            await start_stream(song, lang)
+        except (NoActiveGroupCall, GroupCallNotFound):
