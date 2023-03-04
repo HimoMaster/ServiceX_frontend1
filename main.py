@@ -232,3 +232,54 @@ async def mute_vc(_, message: Message, lang):
 @only_admins
 @handle_error
 async def unmute_vc(_, message: Message, lang):
+    chat_id = message.chat.id
+    try:
+        await pytgcalls.unmute_stream(chat_id)
+        k = await message.reply_text(lang["unmuted"])
+    except (NoActiveGroupCall, GroupCallNotFound):
+        k = await message.reply_text(lang["notActive"])
+    await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["ps", "pause"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def pause_vc(_, message: Message, lang):
+    chat_id = message.chat.id
+    try:
+        await pytgcalls.pause_stream(chat_id)
+        k = await message.reply_text(lang["paused"])
+    except (NoActiveGroupCall, GroupCallNotFound):
+        k = await message.reply_text(lang["notActive"])
+    await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["rs", "resume"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def resume_vc(_, message: Message, lang):
+    chat_id = message.chat.id
+    try:
+        await pytgcalls.resume_stream(chat_id)
+        k = await message.reply_text(lang["resumed"])
+    except (NoActiveGroupCall, GroupCallNotFound):
+        k = await message.reply_text(lang["notActive"])
+    await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["stop", "leave"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
