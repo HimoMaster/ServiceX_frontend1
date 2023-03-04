@@ -190,3 +190,45 @@ async def skip_track(_, message: Message, lang):
             if not next_song.parsed:
                 ok, status = await next_song.parse()
                 if not ok:
+                    raise Exception(status)
+            set_group(chat_id, now_playing=next_song)
+            await skip_stream(next_song, lang)
+            await delete_messages([message])
+        else:
+            set_group(chat_id, is_playing=False, now_playing=None)
+            await set_title(message, "")
+            try:
+                await pytgcalls.leave_group_call(chat_id)
+                k = await message.reply_text(lang["queueEmpty"])
+            except (NoActiveGroupCall, GroupCallNotFound):
+                k = await message.reply_text(lang["notActive"])
+            await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["m", "mute"], config.PREFIXES) & ~filters.private & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def mute_vc(_, message: Message, lang):
+    chat_id = message.chat.id
+    try:
+        await pytgcalls.mute_stream(chat_id)
+        k = await message.reply_text(lang["muted"])
+    except (NoActiveGroupCall, GroupCallNotFound):
+        k = await message.reply_text(lang["notActive"])
+    await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["um", "unmute"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def unmute_vc(_, message: Message, lang):
