@@ -329,3 +329,43 @@ async def queue_list(_, message: Message, lang):
 @only_admins
 @handle_error
 async def shuffle_list(_, message: Message, lang):
+    chat_id = message.chat.id
+    if len(get_queue(chat_id)) > 0:
+        shuffled = shuffle_queue(chat_id)
+        k = await message.reply_text(str(shuffled), disable_web_page_preview=True)
+    else:
+        k = await message.reply_text(lang["queueEmpty"])
+    await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["loop", "repeat"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def loop_stream(_, message: Message, lang):
+    chat_id = message.chat.id
+    group = get_group(chat_id)
+    if group["loop"]:
+        set_group(chat_id, loop=False)
+        k = await message.reply_text(lang["loopOff"])
+    elif group["loop"] == False:
+        set_group(chat_id, loop=True)
+        k = await message.reply_text(lang["loopOn"])
+    await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["mode", "switch"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def switch_mode(_, message: Message, lang):
