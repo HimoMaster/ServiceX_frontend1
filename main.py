@@ -283,3 +283,49 @@ async def resume_vc(_, message: Message, lang):
     filters.command(["stop", "leave"], config.PREFIXES)
     & ~filters.private
     & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def leave_vc(_, message: Message, lang):
+    chat_id = message.chat.id
+    set_group(chat_id, is_playing=False, now_playing=None)
+    await set_title(message, "")
+    clear_queue(chat_id)
+    try:
+        await pytgcalls.leave_group_call(chat_id)
+        k = await message.reply_text(lang["leaveVC"])
+    except (NoActiveGroupCall, GroupCallNotFound):
+        k = await message.reply_text(lang["notActive"])
+    await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["list", "queue"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@handle_error
+async def queue_list(_, message: Message, lang):
+    chat_id = message.chat.id
+    queue = get_queue(chat_id)
+    if len(queue) > 0:
+        k = await message.reply_text(str(queue), disable_web_page_preview=True)
+    else:
+        k = await message.reply_text(lang["queueEmpty"])
+    await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["mix", "shuffle"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def shuffle_list(_, message: Message, lang):
