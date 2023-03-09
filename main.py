@@ -369,3 +369,35 @@ async def loop_stream(_, message: Message, lang):
 @only_admins
 @handle_error
 async def switch_mode(_, message: Message, lang):
+    chat_id = message.chat.id
+    group = get_group(chat_id)
+    if group["is_video"]:
+        set_group(chat_id, is_video=False)
+        k = await message.reply_text(lang["audioMode"])
+    else:
+        set_group(chat_id, is_video=True)
+        k = await message.reply_text(lang["videoMode"])
+    await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["lang", "language"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def set_lang(_, message: Message, lang):
+    chat_id = message.chat.id
+    lng = extract_args(message.text)
+    if lng != "":
+        langs = [
+            file.replace(".json", "")
+            for file in os.listdir(f"{os.getcwd()}/lang/")
+            if file.endswith(".json")
+        ]
+        if lng == "list":
+            k = await message.reply_text("\n".join(langs))
+        elif lng in langs:
