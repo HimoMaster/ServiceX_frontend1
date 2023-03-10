@@ -401,3 +401,43 @@ async def set_lang(_, message: Message, lang):
         if lng == "list":
             k = await message.reply_text("\n".join(langs))
         elif lng in langs:
+            set_group(chat_id, lang=lng)
+            k = await message.reply_text(lang["langSet"] % lng)
+        else:
+            k = await message.reply_text(lang["notFound"])
+        await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["ep", "export"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def export_queue(_, message: Message, lang):
+    chat_id = message.chat.id
+    queue = get_queue(chat_id)
+    if len(queue) > 0:
+        data = json.dumps([song.to_dict() for song in queue], indent=2)
+        filename = f"{message.chat.username or message.chat.id}.json"
+        with open(filename, "w") as file:
+            file.write(data)
+        await message.reply_document(
+            filename, caption=lang["queueExported"] % len(queue)
+        )
+        os.remove(filename)
+        await delete_messages([message])
+    else:
+        k = await message.reply_text(lang["queueEmpty"])
+        await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["ip", "import"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
