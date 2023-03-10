@@ -441,3 +441,31 @@ async def export_queue(_, message: Message, lang):
     & ~filters.edited
 )
 @register
+@language
+@only_admins
+@handle_error
+async def import_queue(_, message: Message, lang):
+    if not message.reply_to_message or not message.reply_to_message.document:
+        k = await message.reply_text(lang["replyToAFile"])
+        return await delete_messages([message, k])
+    chat_id = message.chat.id
+    filename = await message.reply_to_message.download()
+    data_str = None
+    with open(filename, "r") as file:
+        data_str = file.read()
+    try:
+        data = json.loads(data_str)
+    except json.JSONDecodeError:
+        k = await message.reply_text(lang["invalidFile"])
+        return await delete_messages([message, k])
+    try:
+        temp_queue = []
+        for song_dict in data:
+            song = Song(song_dict["yt_url"], message)
+            song.title = song_dict["title"]
+            temp_queue.append(song)
+    except BaseException:
+        k = await message.reply_text(lang["invalidFile"])
+        return await delete_messages([message, k])
+    group = get_group(chat_id)
+    queue = get_queue(chat_id)
