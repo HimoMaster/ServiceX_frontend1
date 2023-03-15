@@ -469,3 +469,43 @@ async def import_queue(_, message: Message, lang):
         return await delete_messages([message, k])
     group = get_group(chat_id)
     queue = get_queue(chat_id)
+    if group["is_playing"]:
+        for _song in temp_queue:
+            await queue.put(_song)
+    else:
+        song = temp_queue[0]
+        set_group(chat_id, is_playing=True, now_playing=song)
+        ok, status = await song.parse()
+        if not ok:
+            raise Exception(status)
+        try:
+            await start_stream(song, lang)
+        except (NoActiveGroupCall, GroupCallNotFound):
+            peer = await app.resolve_peer(chat_id)
+            await app.send(
+                CreateGroupCall(
+                    peer=InputPeerChannel(
+                        channel_id=peer.channel_id,
+                        access_hash=peer.access_hash,
+                    ),
+                    random_id=app.rnd_id() // 9000000000,
+                )
+            )
+            await start_stream(song, lang)
+        for _song in temp_queue[1:]:
+            await queue.put(_song)
+    k = await message.reply_text(lang["queueImported"] % len(temp_queue))
+    await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["pl", "playlist"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@register
+@language
+@only_admins
+@handle_error
+async def import_playlist(_, message: Message, lang):
+    chat_id = message.chat.id
