@@ -592,3 +592,43 @@ async def stream_end(_, update: Update, lang):
                 if not next_song.parsed:
                     ok, status = await next_song.parse()
                     if not ok:
+                        raise Exception(status)
+                set_group(chat_id, now_playing=next_song)
+                await skip_stream(next_song, lang)
+            else:
+                if safone.get(chat_id) is not None:
+                    try:
+                        await safone[chat_id].delete()
+                    except BaseException:
+                        pass
+                await set_title(chat_id, "", client=app)
+                set_group(chat_id, is_playing=False, now_playing=None)
+                await pytgcalls.leave_group_call(chat_id)
+
+
+@pytgcalls.on_closed_voice_chat()
+@handle_error
+async def closed_vc(_, chat_id: int):
+    if chat_id not in all_groups():
+        if safone.get(chat_id) is not None:
+            try:
+                await safone[chat_id].delete()
+            except BaseException:
+                pass
+        await set_title(chat_id, "", client=app)
+        set_group(chat_id, now_playing=None, is_playing=False)
+        clear_queue(chat_id)
+
+
+@pytgcalls.on_kicked()
+@handle_error
+async def kicked_vc(_, chat_id: int):
+    if chat_id not in all_groups():
+        if safone.get(chat_id) is not None:
+            try:
+                await safone[chat_id].delete()
+            except BaseException:
+                pass
+        await set_title(chat_id, "", client=app)
+        set_group(chat_id, now_playing=None, is_playing=False)
+        clear_queue(chat_id)
