@@ -509,3 +509,48 @@ async def import_queue(_, message: Message, lang):
 @handle_error
 async def import_playlist(_, message: Message, lang):
     chat_id = message.chat.id
+    if message.reply_to_message:
+        text = message.reply_to_message.text
+    else:
+        text = extract_args(message.text)
+    if text == "":
+        k = await message.reply_text(lang["notFound"])
+        return await delete_messages([message, k])
+    if "youtube.com/playlist?list=" not in text:
+        k = await message.reply_text(lang["invalidFile"])
+        return await delete_messages([message, k])
+    try:
+        temp_queue = get_youtube_playlist(text, message)
+    except BaseException:
+        k = await message.reply_text(lang["notFound"])
+        return await delete_messages([message, k])
+    group = get_group(chat_id)
+    queue = get_queue(chat_id)
+    if not group["is_playing"]:
+        song = await temp_queue.__anext__()
+        set_group(chat_id, is_playing=True, now_playing=song)
+        ok, status = await song.parse()
+        if not ok:
+            raise Exception(status)
+        try:
+            await start_stream(song, lang)
+        except (NoActiveGroupCall, GroupCallNotFound):
+            peer = await app.resolve_peer(chat_id)
+            await app.send(
+                CreateGroupCall(
+                    peer=InputPeerChannel(
+                        channel_id=peer.channel_id,
+                        access_hash=peer.access_hash,
+                    ),
+                    random_id=app.rnd_id() // 9000000000,
+                )
+            )
+            await start_stream(song, lang)
+        async for _song in temp_queue:
+            await queue.put(_song)
+        queue.get_nowait()
+    else:
+        async for _song in temp_queue:
+            await queue.put(_song)
+    k = await message.reply_text(lang["queueImported"] % len(group["queue"]))
+    await delete_messages([message, k])
