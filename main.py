@@ -632,3 +632,20 @@ async def kicked_vc(_, chat_id: int):
         await set_title(chat_id, "", client=app)
         set_group(chat_id, now_playing=None, is_playing=False)
         clear_queue(chat_id)
+
+
+@pytgcalls.on_left()
+@handle_error
+async def left_vc(_, chat_id: int):
+    if chat_id not in all_groups():
+        if safone.get(chat_id) is not None:
+            try:
+                await safone[chat_id].delete()
+            except BaseException:
+                pass
+        await set_title(chat_id, "", client=app)
+        set_group(chat_id, now_playing=None, is_playing=False)
+        clear_queue(chat_id)
+
+
+pytgcalls.run()
