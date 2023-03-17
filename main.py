@@ -554,3 +554,41 @@ async def import_playlist(_, message: Message, lang):
             await queue.put(_song)
     k = await message.reply_text(lang["queueImported"] % len(group["queue"]))
     await delete_messages([message, k])
+
+
+@app.on_message(
+    filters.command(["update", "restart"], config.PREFIXES)
+    & ~filters.private
+    & ~filters.edited
+)
+@language
+@only_admins
+@handle_error
+async def update_restart(_, message: Message, lang):
+    chats = all_groups()
+    stats = await message.reply_text(lang["update"])
+    for chat in chats:
+        try:
+            await pytgcalls.leave_group_call(chat)
+        except (NoActiveGroupCall, GroupCallNotFound):
+            pass
+    await stats.edit_text(lang["restart"])
+    Thread(target=restart()).start()
+
+
+@pytgcalls.on_stream_end()
+@language
+@handle_error
+async def stream_end(_, update: Update, lang):
+    if isinstance(update, StreamAudioEnded) or isinstance(update, StreamVideoEnded):
+        chat_id = update.chat_id
+        group = get_group(chat_id)
+        if group["loop"]:
+            await skip_stream(group["now_playing"], lang)
+        else:
+            queue = get_queue(chat_id)
+            if len(queue) > 0:
+                next_song = await queue.get()
+                if not next_song.parsed:
+                    ok, status = await next_song.parse()
+                    if not ok:
