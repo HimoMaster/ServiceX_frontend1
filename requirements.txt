@@ -2,3 +2,6 @@ pytube
 pillow
 aiohttp
 aiofiles
+tgcrypto
+python-dotenv
+py-tgcalls==0.8
