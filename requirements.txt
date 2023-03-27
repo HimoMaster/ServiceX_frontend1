@@ -6,4 +6,5 @@ tgcrypto
 python-dotenv
 py-tgcalls==0.8.1rc1
 youtube-search-python
-git+https:/
+git+https://github.com/pyrogram/pyrogram
+git+
