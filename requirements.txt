@@ -4,4 +4,6 @@ aiohttp
 aiofiles
 tgcrypto
 python-dotenv
-py-tgcalls==0.8
+py-tgcalls==0.8.1rc1
+youtube-search-python
+git+https:/
